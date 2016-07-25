@@ -1,0 +1,51 @@
+<!--8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.
+
+-> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
+-> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)-->
+
+<!-- use math.random to generate random numbers. compare each new number to growing array using a for loop. if new number does NOT equal arr[i] then push into the array. if number does equal any element of array then do nothing. This will be useful for the Lottery assignment.  
+
+generate a random number with math.random
+check against elements of randomArray
+if unique then push and do again. If not, just do again
+when randomArray has ten elements return and output array
+random Number syntax from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+Need to end function when randomArr.length = 10. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array of Unique Random Numbers</title>
+</head>
+<body>
+<p id="randomArray"></p>
+
+</body>
+<script>
+debugger;
+var final;
+	function getRandomNum (){
+		var min = 1;
+		var max = 100;
+		var randomArr =[];
+		var newNum;
+		for (var i = 0; i <10; i++) {
+			newNum = Math.floor(Math.random() *(max-min +1)) + min;
+			if (newNum !== randomArr[i]){
+					randomArr.push(newNum);
+
+				}
+				
+		}
+		return randomArr;// this allows the array to escape the function getrandomNum
+	}
+	final = getRandomNum();//store the array formerly known as randomArr in global scope
+
+	document.getElementById("randomArray").innerHTML = final;
+	// could also do docm etc. .innerHTML = getRandomNum();
+		
+
+
+
+</script>
+</html>
