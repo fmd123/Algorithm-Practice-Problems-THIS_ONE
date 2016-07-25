@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Is It a Leap Year?</title>
+</head>
+<body>
+
+
+<h1>Is It a Leap Year?</h1>
+<p id ="yesNo"></p>
+
+<!-- Leap year Rules:
+1. must be divisible by 4
+2. Cannot be divisble by 100
+3. can be divisible by 400 
+
+Or another way to say... A year will be a leap year if it is divisible by 4 but not by 100. If a year is divisible by 4 and by 100, it is not a leap year unless it is also divisible by 400.  http://stackoverflow.com/questions/725098/leap-year-calculation-->
+
+<!-- create a function that prompts user to input a year then crunch it and give back answer either "This is a leap year" or This is not a leap yar -->
+<!-- There are 30 leap years between 1900 and 2020:
+1904, 1908, 1912, 1916, 1920, 1924, 1928, 1932, 1936, 1940, 1944, 1948, 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020. -->
+<script>
+
+var userYear = prompt("Please enter a year");
+
+
+function isIt (year){	
+	var answer;
+
+		if (year%4 ===0 && year%100 === 0 && year%400 === 0) {
+			//this will be a leap year
+			return answer = "This is a leap year";
+
+		} else if (year%4 === 0  && year%100 !== 0 ){
+			// this will be a leap year
+			return answer = "Is a leap year";
+
+		} else {//not a leap year
+			return answer = "Not a leap year";
+		}
+
+
+}
+
+
+document.getElementById("yesNo").innerHTML = isIt(userYear);
+
+// pay attention to global vs local!!! 
+
+
+</script>
+</body>
+</html>

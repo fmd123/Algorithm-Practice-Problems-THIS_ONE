@@ -1,0 +1,59 @@
+<!-- 5. Write function that translates a text to Pig Latin and back. English is translated to Pig Latin by taking the first letter of every word, moving it to the end of the word and adding "ay".
+
+"The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+
+(source: https://adriann.github.io/programming_problems.html)-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pig Latin Function Algorithms Practice #5</title>
+</head>
+<body>
+
+<p id = "pigified"></p>
+
+
+<script>
+//make a prompt to request input
+//take string and split it on words and put in an array
+//after basic stuff is done then need to deal with capitalization and punctuation interfering.
+//take first letter off the word and put onto the end of word
+//concatentate remnant word + first letter + "ay"
+
+
+
+
+function pigLatin (inputText) {
+	var wordArray = inputText.split(" ");
+		console.log (wordArray);
+		var pigify = "";
+
+	for (var i = 0; i < wordArray.length; i++) { 
+
+		var wordBody = wordArray[i].substring(1);
+			//this returns the string starting at index 1
+		var firstLetter = wordArray[i].charAt(0);
+			//this returns the letter at index 0
+		var pigWord = wordBody + firstLetter + "ay ";
+	
+	
+		pigify = pigify += pigWord;
+
+		//console.log (pigWord);
+
+		console.log (pigify);
+		
+
+	}
+
+	return pigify;
+}
+
+ //pigLatin();//thank you to Josh for finding my bugs! 
+ document.getElementById("pigified").innerHTML = pigLatin(prompt("Please enter a sentence to be turned into Pig Latin. For now, please don't capitalize or punctuate."));
+
+
+
+</script>
+</body>
+</html>

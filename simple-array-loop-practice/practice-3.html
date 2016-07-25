@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	Even numbers from 0 - 20.
+	<div id="answer"></div>
+
+
+	<script>
+	/*
+		I only want to see even numbers between 0 - 20; 
+		do not create an array you should only use the for loop to count
+	*/
+		var evenNums = 0;// this is the 0. 
+
+		for(var i = 1; i <=20; i++) { //this will do a for-loop for i = 1 and up.
+
+			if(( i%2 )=== 0){
+				evenNums = evenNums + ", " + i;// create a concatenated string. 
+
+			}
+
+
+		}
+
+
+
+	document.getElementById('answer').innerHTML = evenNums;
+
+
+
+
+	</script>
+</body>
+</html>

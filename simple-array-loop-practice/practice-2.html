@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	What is the index of "apples"?
+	<div id="answer"></div>
+
+
+	<script>
+
+	/*
+		I've filled out more of the code for this one, Complete the code below to print out the index of "apples".
+	*/
+	
+
+	var fruit = ["oranges", "pineapples", "strawberries", "apples", "tangerines", "grapes", "pears"];
+	var answer;
+
+
+
+		for( var i = 0; i < fruit.length; i++){
+			if(fruit[i] == "apples"){
+				answer = i;
+				
+			}
+		}
+
+
+
+	document.getElementById('answer').innerHTML = answer;
+
+
+
+
+	</script>
+</body>
+</html>

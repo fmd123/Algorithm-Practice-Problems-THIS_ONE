@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matching Arrays</title>
+	<!-- 6. Write a function which takes in two arrays and determines if they contain the same number of the same values.
+
+[], [] -> true
+[2, 3, 4], [1, 2, 3] -> false
+["a", "c", "b"], ["a", "b", "c"] -> true
+[1, 1, 1], [1, 1, 1, 1] -> false
+ -->
+<!-- compare array .lengths -if not equal then return false -->
+<!-- Use for loop or use the i in whatever thing...
+	Compare each element at same index. As soon as a comparison is not equal then return false
+	if all elements are same then return true. USE THIS FOR LOTTO ASSIGNMENT :-)
+	can add a prompt to get the info but I should do input box stuff.-->
+
+</head>
+<body>
+<p id = "answered"></p>
+
+<script>
+debugger;	 
+	function MatchIt(){
+		var arr1 = [2, 1, 1];
+		var arr2 = [1, 1, 1,];
+
+		arr1 = arr1.sort();
+		arr2 = arr2.sort();
+ 
+ 		var answer;
+
+		
+		 function compare (){
+		 	if (arr1.length == arr2.length) {
+		 		for (var i = 0; i < arr1.length; i++) {
+		 			if (arr1[i] == arr2[i]) {
+		 				answer = true;
+		 			} else {
+				 		answer = false;//in cases of array elements !== each other. answer & end function.
+				 		document.getElementById("answered").innerHTML = answer;
+				 		return; 
+		 				// without this return, the for-loop would continue to run 
+		 				// and give answers based on later matches which could erroneously turn answer to true.
+		 			}
+		 		}
+		 	} else {
+				answer = false; // in cases of arrays !==length.
+		 	}
+				document.getElementById("answered").innerHTML = answer;
+			}
+
+			function equallyEmpty() {
+
+					if (arr1.length === 0 && arr2.length === 0) {
+			  			answer = true;
+			 			document.getElementById("answered").innerHTML = answer;
+						return;
+				  	} else {
+				  		compare();
+				  	}
+			}
+		equallyEmpty();	 
+	}//End of MatchIt
+	MatchIt();
+	
+	//if I were to do this again I would have put the test for equal array length at beginning of equallyEmpty but it was already built into compare by time I realized that I needed to test for condition of two equally empty arrays. 
+	//I can rework this later but for now I need to move on! :-)
+</script>
+
+
+</body>
+</html>
+

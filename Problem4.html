@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Removing Duplicate Integers from an Array</title>
+</head>
+<body>
+<!-- 4. Write a function which takes an array of integers and returns an array with any duplicate integers removed.
+[1,1,2,3,1,2,3] -> [1,2,3]
+[1,4,4,4,2,2,4,4,4] -> [1,4,2] -->
+
+
+<h2>Problem 4: Removing Duplicate Integers from An Array</h2>
+<p></p>
+<p id = "unduplicated"></p>
+
+<script>
+
+	function unDuplicate(arr) {
+		// arr = [1,1,2,3,1,2,3];
+		arr = [1,1,2,3,1,2,3];
+		var unduped = [];
+
+			for (var i = 0; i < arr.length; i++) {
+				if (unduped.indexOf(arr[i]) == -1){
+					unduped.push(arr[i]);
+				}
+			}
+
+		document.getElementById("unduplicated").innerHTML = unduped;
+	}
+	unDuplicate();
+</script>
+<!-- How it works: unduped.indexOf(arr[i]) == -1) arr[i] is the element at i. 
+E.g. 1 is value of arr at index 0. So 1 is argument for unduped.indexOf. 
+IndexOf takes an element and returns its index. Since there is no 1 in unduped array the index will be undefined.
+setting it to ===-1 will capture that undefined  state  and if this is the case then 1 (first value of arr[i])
+will be pushed into array. Next time we see a one there will be an index for a 1 already so it will 
+not push an additional one into the unduped array. 
+  -->
+</body>
+</html>
