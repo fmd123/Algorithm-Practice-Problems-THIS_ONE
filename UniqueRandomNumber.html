@@ -22,27 +22,39 @@ Need to end function when randomArr.length = 10. -->
 
 </body>
 <script>
-debugger;
-var final;
+
+// var final;
 	function getRandomNum (){
+
 		var min = 1;
 		var max = 100;
 		var randomArr =[];
 		var newNum;
-		for (var i = 0; i <10; i++) {
+		var i =0;
+		while (i < 10) {
 			newNum = Math.floor(Math.random() *(max-min +1)) + min;
-			if (newNum !== randomArr[i]){
+			if (randomArr.indexOf(newNum) == -1 ){
 					randomArr.push(newNum);
-
+					i++;
 				}
 				
 		}
-		return randomArr;// this allows the array to escape the function getrandomNum
+		return document.getElementById("randomArray").innerHTML =randomArr;
+		//do the return after the end of while loop but before end of function
 	}
-	final = getRandomNum();//store the array formerly known as randomArr in global scope
 
-	document.getElementById("randomArray").innerHTML = final;
-	// could also do docm etc. .innerHTML = getRandomNum();
+	getRandomNum();
+
+	// final = getRandomNum();//store the array formerly known as randomArr in global scope
+
+	// document.getElementById("randomArray").innerHTML = final;
+	
+	// line 35 generates a new random integer (newNum) within range of 1-100 inclusive. 
+	// if randomArr does NOT have a newNum element then the index of given newNum is -1 (ie undefined)
+	// and 'if statement' is true. 
+	// if random.indexOf(newNum) is NOT equal to -1 then push newNum into randomArr.
+	//i++ is just a variable not an index and will only be incremented when "if statement" is true.
+	// This does NOT make use of randomArr.length at all. Just counting the number of successful loops.
 		
 
 
